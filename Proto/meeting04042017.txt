@@ -1,0 +1,48 @@
+to do
+django
+	average rating
+
+eye
+	bugfix (jannis)
+	integration of visualtsation
+
+frontend
+	include button to show visualisatoion
+	logo
+
+report
+	how does it look like? talk to chadan
+
+evaluation
+	female/male: 
+		does it make a difference, does our algorithm work better for females than for males or everyone?
+	arsenii is missing. -> idea:
+		instead of using bci data, use the data from the questionaire
+		finish the project without arsenii
+
+push it?
+	make deadlines, tell chadan a plan, what we are doing, till when
+	we make a draft!
+	now ->
+		mail chandan(arsenii - is he in or out?, report...), mail arsenii
+			- no idea of what arsenii did
+			- next week: draft without bci data
+			- copy mail to slack first so everyone can read it
+		collect ideas for our thesis!
+	till 11th ->
+		final draft for evaluation, give chandan 2-3 days for reply
+		start report
+	till 18th ->
+		final concept evaluation
+		finish code...
+		start recordings
+	after ->
+		evaluation/analyze/finish report
+
+
+ideas for draft:
+	bci-data is missing.
+	compare data from "similarity algo" with data from "questionaire"
+	"correlation between the emotions and the gaze data and rating"
+	
+meeting at 4pm monday!

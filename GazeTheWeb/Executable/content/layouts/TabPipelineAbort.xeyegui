@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+    <grid style="dark_panel">
+    	<row size="100%">
+    		<column size="9.375%">
+    			<blank/> <!-- reserved for Web -->
+    		</column>
+    		<column size="90.625%">
+    			<grid>
+    				<row size="100%">
+	    				<column size="90%">
+	    					<blank id="web_view"/> <!-- reserved for WebView rendering -->
+    					</column>
+    					<column size="10%">
+	    					<stack showbackground="true" innerborder="10%">
+			    				<circlebutton id="abort" desckey="pipeline_abort:abort" icon="icons/Cross.png" style="tab_panel"/>
+    						</stack>
+    					</column>
+    				</row>
+    			</grid>
+    		</column>
+    	</row>
+    </grid>
+</layout>

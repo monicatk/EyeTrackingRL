@@ -1,0 +1,18 @@
+suggestions:
+	experiment : split into categories.
+	- find out, if our hypothesis works better for one or another category
+
+	fix points color, depending on rating
+	- like the higher the rating, the more green
+	- or make groups, like group of persons with similar questionaire...
+
+to-do list:
+	finish questionaire
+	- description of focus, interest etc, so user knows, what he is rating
+	- tell the user, 
+
+	decide, which videos! till next meeting!
+	- must be videos, which polarize, like half of people like it and other half wont
+	- maybe vids from youtube, with - 50% likes / 50% dislikes
+
+	draft  till SATURDAY!!!!!!

@@ -1,0 +1,41 @@
+eye-tracking (presentation)
+	calcultion of fixation points
+		research ...
+		based on proximity-based algorithm
+		algorithm might be improved later
+	communication between python and javascript:
+		create JSON-file
+	visualization
+		2 different circles: 
+			(fixation_time > mean): big_circle
+			else: small_circle
+	next steps:
+		improve fixation algorithm
+		change design, layout of visualization
+		combine bci + eyetracking data
+	yannis and yessi need more eyetracking data
+		ask yessi or raphael, how you can help
+		each member of the team should do it once at least
+	bci will be not available for some months, soon
+frontend team (presentation)
+	index view: 8 carousels with videos, 2 visible at same time, scroll down/up for next carousels
+	search view: 
+	play view: video in middle + list of related videos on left, (search, +, <3, settings) on top, (play, mute, forward, backward, fullscreen) on buttom
+	ramin added some functionality to an old version of the player
+	future:
+		functionality should be added to new version
+		small changes in wireframes
+	when will first version be ready to be tested with eye-tracker?
+		soon. django-connection not there yet, but ramin is ready to help
+for next weeks:
+	meeting: each to weeks from now on (next meeting in 2 weeks! but  we will meet next week without teachers)
+	raphael will be in israel soon, for some weeks
+	eyetracking + brain device will be not available for like 40 days till end of february
+		braindata-records for at least 10 people, so we have something to work with
+		different kinds of videos ...
+		ask raphael or yannis/yessi for more information
+django
+	lsl-connection
+		data is saved as xdf right now, 
+		talk to teams (arsenii, yannis)
+		save like 1 sample per second (for bci)

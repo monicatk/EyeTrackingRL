@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+    <grid consumeinput="true">
+			<row size="80%">
+				<column size="15%">
+					<stack style="dark_panel" showbackground="true">
+						<circlebutton icon="icons/Cross.png" desckey="tab_overview:close" id="close" border="15%"/>
+					</stack>
+				</column>
+				<column size="70%">
+					<grid style="panel" showbackground="true">
+						<row size="100%">
+							<column size="100%">
+								<stack border="15%" style="bright_panel" showbackground="true">
+									<grid>
+										<row size="15%">
+											<column size="100%">
+													<textblock alignment="center" verticalalignment="bottom" fontsize="medium" id="url"/>
+											</column>
+										</row>
+										<row size="5%">
+											<column size="100%">
+													<blank/>
+											</column>
+										</row>
+										<row size="80%">
+											<column size="100%">
+													<picture id="preview" alignment="zoomed" border="10%"/>
+											</column>
+										</row>
+									</grid>
+								</stack>
+							</column>
+						</row>
+					</grid>
+				</column>
+				<column size="15%">
+					<stack style="dark_panel" showbackground="true">
+						<circlebutton icon="icons/EditTabURL.png" desckey="tab_overview:edit_url" id="edit_url" border="15%"/>
+						<circlebutton icon="icons/BookmarkTab_false.png" desckey="tab_overview:bookmark_tab" id="bookmark_tab" border="15%"/>
+						<circlebutton icon="icons/ReloadTab.png" desckey="tab_overview:reload_tab" id="reload_tab" border="15%"/>
+						<circlebutton icon="icons/CloseTab.png" desckey="tab_overview:close_tab" id="close_tab" border="15%"/>
+					</stack>
+				</column>
+			</row>
+			<row size="20%">
+				<column size="100%">
+					<stack style="default" showbackground="true">
+						<circlebutton relativescale="75%" icon="icons/Back.png" desckey="tab_overview:back" id="back" border="10%"/>
+						<block id="tab_0"/>
+						<block id="tab_1"/>
+						<block id="tab_2"/>
+						<block id="tab_3"/>
+						<block id="tab_4"/>
+						<circlebutton relativescale="75%" icon="icons/Forward.png" desckey="tab_overview:forward" id="forward" border="10%"/>
+					</stack>
+				</column>
+			</row>
+    </grid>
+</layout>

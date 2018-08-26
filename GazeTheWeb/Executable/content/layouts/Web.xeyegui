@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+    <grid>
+        <row size="100%">
+            <column size="9.375%">
+                <stack showbackground="true"style="panel">
+									<block style="default_noback" relativescale="50%"/>
+									<circlebutton icon="icons/TabOverview.png" desckey="web:tab_overview" id="tab_overview" border="10%"/>
+									<grid>
+										<row size="55%">
+											<column size="95%">
+												<circlebutton icon="icons/TabBack.png" desckey="web:back" id="back" border="2%"/>
+											</column>
+											<column size="5%"/>
+										</row>
+										<row size="45%">
+											<column size="15%"/>
+											<column size="85%">
+												<circlebutton icon="icons/TabForward.png" desckey="web:forward" id="forward"/>
+											</column>
+										</row>
+									</grid>
+									<circlebutton icon="icons/Settings.png" desckey="web:settings" id="settings" border="10%"/>
+									<block style="default_noback" relativescale="10%"/>
+                </stack>
+            </column>
+            <column size="90.625%">
+                <blank/> <!-- reserved for Tab -->
+            </column>
+        </row>
+    </grid>
+</layout>

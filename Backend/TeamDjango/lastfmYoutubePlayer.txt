@@ -1,0 +1,32 @@
+https://github.com/larryhudson/lastfm_youtube_player
+
+lastfm_youtube_player/player/..
+	..admin.py : not special
+	..apps.py: not special
+	..forms.py: defines 2 different search "charfields"
+	..lastfm_search.py: functions for things like "search", "duration", ... anything, you can get from last fm player
+	..models.py: for "Album" and "Song"
+	..tests.py: empty
+	..urls.py: url patterns for index, search and detail
+	..views: 
+		index.py: (shows recently added albums)
+		details.py: (album, track_list)
+		search.py: (if this is a POST request we need to process the form data)
+	..templates/..: html for detail, index and search
+		..detail.html: = player. starts with a script, to create the player.
+	..templatetags/player_extras:"next track" is defined here
+	..static/jquery-3.1.0.js: some library, which is used.
+lastfm_youtube_player/flask_rewrite/..
+	flask is similar to django. it is more like an alternative. 
+	pretty interesting code there, but not related to our project. we could do it this way, however
+	..funcs_lastfm.py: can search a json file for an album and return it
+	..funcs_youtube.py: 
+		compare_song_vid(song_string, vid_string, artist):
+			fuzzy compares strings, easy to use! https://pypi.python.org/pypi/fuzzywuzzy
+			fuzz.ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear") >> 91
+			fuzz.token_sort_ratio("fuzzy wuzzy was a bear", "wuzzy fuzzy was a bear") >> 100
+		handles searches, playlists etc from youtube 
+		important, connection between youtube and lastfm
+
+
+

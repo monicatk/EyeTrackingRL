@@ -1,0 +1,125 @@
+
+/* Content */
+#content {
+	background-color: rgb(68,68,68);
+	position:absolute;
+	top:150px;
+	bottom:50px; /*change value for the player page*/
+	overflow:auto;
+	color:white;
+	width:100%;
+}
+
+#content .slide-show{
+	margin-left:5%;
+	margin-right:5%;
+}
+
+#content .slide-show .carousel {
+	height: 200px;
+}
+
+
+#footer {
+	background-color: rgb(68,68,68);
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	width:100%;
+	overflow:hidden;
+	text-align:center;
+	padding-right:0px;
+	height:50px; /*change value for the player page*/
+	padding-top: 5px;
+}
+
+/* carousel */
+
+a.left.carousel-control, a.right.carousel-control{
+	background-color: rgb(157,157,157);
+	width: 100px;
+}
+
+a.left.carousel-control:hover, a.right.carousel-control:hover{
+	background-color: darkgrey);
+	width: 100px;
+}
+
+a.left.carousel-control:focus, a.right.carousel-control:focus{
+	background-color: rgb(157,157,157);
+	background-image: none;
+	width: 100px;
+}
+
+
+#carousel1, #carousel2, #carousel3, #carousel4{
+	background-color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 100px;
+	padding-right:100px;
+	height: 30%;
+}
+
+.carousel .carousel-inner {
+	height:100%;
+}
+
+.youtube a:hover{
+	background-color: red;
+}	
+
+
+.col-md-3 h1{
+	color:white;
+	text-align:left;
+	padding-left: 15px;
+	padding-right: 15px;
+	/*padding-top: 15px;
+	padding-bottom: 15px; */
+}
+
+.carousel-control { width:  5%; }
+
+
+.glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  margin-top:-5px;
+  margin-left: -5px;
+}
+
+i .glyphicon .glyphicon-chevron-left, i .glyphicon .glyphicon-chevron-right {
+	width: 50px;
+	height: 50px;
+}
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+
+.carousel p {
+	  white-space: nowrap;
+	  height: 100%;
+	  padding-top: 10px;
+	  overflow:hidden;
+	  width:100%;
+	  text-overflow:ellipsis;
+	  color: rgb(68,68,68);
+	  margin-bottom: 0;
+}
+
+a > iframe {
+  width: 100%;
+  resize: both;
+  overflow: auto;
+}
+
+.youtube iframe{ 
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:3;
+}

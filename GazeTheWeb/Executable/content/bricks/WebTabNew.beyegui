@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<stack id="stack">
+    <boxbutton icon="icons/Plus.png" desckey="tab_overview:new_tab" id="new_tab" border="20%"/>
+</stack>

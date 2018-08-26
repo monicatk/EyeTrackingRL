@@ -1,0 +1,57 @@
+/* Hover clickable elements class */
+
+.hoverClickable,
+.hoverClickableSelf{
+  display: block; 
+  width: 100%; 
+  position: relative; 
+  z-index: 2;
+  text-decoration: none;
+  color: rgb(157,157,157) !important;
+  box-sizing: border-box;  
+  -moz-box-sizing: border-box;  
+  -webkit-box-sizing: border-box; 
+  border-left: 0px solid #782121;
+}
+	
+.hoverClickable:hover,
+.hoverClickableSelf:hover{ border-bottom: 0px; color: #fff;}
+
+.hoverClickable:after,
+.hoverClickableSelf:after { 
+  content: "";
+  background: #782121; 
+  height: 100%; 
+  left: 0; 
+  top: 0; 
+  width: 0px;  
+  position: absolute; 
+  transition: all 1.5s ease 0s; 
+  -webkit-transition: all 1.5s ease 0s; 
+  z-index: -1;
+}
+
+.hoverClickable:hover:after,
+.hoverClickableSelf:hover:after{ width: 100%; }
+
+
+/* mouse cursor trail */
+
+
+body {
+	cursor: crosshair;
+}
+
+/* this style can be used to change the links on header to button but with the same style as links */
+.header_btn{
+	background: transparent;
+	font-weight: bold;
+    text-align: center;
+    /*border-left: 1px solid rgba(68, 68, 68, .75);*/
+    border:none;
+	border-top: 0px;
+	border-right: 0px;
+    height: 15%;
+    line-height: 15%;
+	padding: 15px;
+}

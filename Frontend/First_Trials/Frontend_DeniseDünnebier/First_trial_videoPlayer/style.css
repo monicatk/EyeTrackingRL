@@ -1,0 +1,132 @@
+	
+body {
+	background:RGB(68,68,68);
+	color: RGB(240,240,240);
+	font-family: Calibri;
+
+}
+
+button {
+	height: 100%;
+	width: 120px;
+
+}
+
+.container {
+	width: 620px;
+	height: 100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.container-video {	
+	color: #fff;
+}
+ .container-video-control {
+	width: 640px;
+	height:120px;
+	background-color: #000000;
+ }
+
+ .container-video-audio {
+	 margin-left: 10px;
+	 width: 600px;
+	 
+ }
+
+.video {
+	position:absolute;
+}
+
+.controls-center {
+	width: 620px;
+	height: 60px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	background-color: black;
+}
+
+.video-seek {
+	float:left;	
+	width:180px;
+	margin-right: 10px;
+}
+
+.controls-slider {
+	height:50px;
+	max-width:200px;
+	background:pink;
+}
+
+.video-seek > .ui-slider-horizontal {
+	position:relative;
+	height:1em;
+	width:100%;
+	background: RGB(240,240,240);	
+}
+
+.video-seek > .ui-slider-horizontal .ui-slider-handle { 
+	position:absolute;
+	height: 1.5em; 
+	width: 0.5em;
+	background:gray;
+	z-index:1;
+}
+.video-seek > .ui-slider-horizontal .ui-slider-handle { 
+	margin-top: -0.2em;
+	margin-left:-0.5em; 
+	
+}
+
+.controls-timer {
+	background:RGB(68,68,68);
+	height:30px;
+	width:100px;	
+}
+
+/****************** AUDIO SLIDER ****************************/
+
+.audio-seek {
+	width:100px;
+	float:right;	
+}
+
+.controls-audio-slider {
+	height:50px;
+	max-width:200px;
+	background:pink;
+}
+
+.audio-seek > .ui-slider-horizontal {
+	position:relative;
+	height:1em;
+	width:100%;
+	background:RGB(240,240,240);	
+}
+
+.audio-seek > .ui-slider-horizontal .ui-slider-handle {
+	position:absolute;
+	height:1.5em;
+	width:0.9em;
+	background:gray;
+	z-index:1;
+	margin-top:-0.2em;
+	margin-left:-0.5em;	
+}
+
+/******************* PROGRESS BAR *************************/
+
+.controls-progress-bar {
+	height:10px;
+	width:200px;
+	background:orange;	
+}
+
+.controls-progress-bar .progressing {
+	height:100%;
+	width:0;
+	background:green;
+}
+
+

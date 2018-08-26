@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+	<grid showbackground="true" style="panel" consumeinput="true">
+		<row size="100%">
+			<column size="10%">
+				<stack style="dark_panel" showbackground="true">
+					<circlebutton icon="icons/Deselect.png" desckey="url_input_bookmarks:back" id="back" border="5%"/>
+				</stack>
+			</column>
+			<column size="5%">
+				<blank/>
+			</column>
+			<column size="80%">
+					<blank id="bookmarks_flow"/>
+			</column>
+			<column size="5%">
+				<blank/>
+			</column>
+		</row>
+	</grid>
+</layout>

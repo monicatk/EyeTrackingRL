@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+	<grid showbackground="true" style="panel">
+		<row size="100%">
+			<column size="15%">
+				<stack style="dark_panel" showbackground="true">
+					<circlebutton icon="icons/Deselect.svg" desckey="settings:back_to_settings" id="back" border="15%"/>
+				</stack>
+			</column>
+			<column size="85%">
+				<grid innerborder="10%">
+					<row size="15%">
+						<column size="100%">
+							<textblock style="default_noback" alignment="center" verticalalignment="top" fontsize="tall" key="settings:info"/>
+						</column>
+					</row>
+					<row size="85%">
+						<column size="50%">
+							<grid innerborder="10%" style="default" showbackground="true">
+								<row size="70%">
+									<column size="100%">
+										<picture src="graphics/Logo.svg"/>
+									</column>
+								</row>
+								<row size="30%">
+									<column size="100%">
+										<textblock alignment="center" verticalalignment="top" fontsize="tall" content="GazeTheWeb\nBrowse"/>
+									</column>
+								</row>
+							</grid>
+						</column>
+						<column size="50%">
+							<stack style="default" showbackground="true">
+								<textblock alignment="center" verticalalignment="bottom" fontsize="medium" key="settings:info_text_developers" border="10%" relativescale="150%"/>
+								<textblock alignment="center" verticalalignment="top" fontsize="medium" key="settings:info_text_superviser" border="10%" relativescale="150%"/>
+								<textblock alignment="center" verticalalignment="top" fontsize="small" key="settings:info_text_mamem" border="10%"/>
+							</stack>
+						</column>
+					</row>
+				</grid>
+			</column>
+		</row>
+	</grid>
+</layout>

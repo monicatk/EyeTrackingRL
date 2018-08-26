@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<sensor icon="icons/ScrollDown.png" desckey="tab:scroll_down" id="scroll_down_sensor" style="invisible_but_icon" dimming="true"/>

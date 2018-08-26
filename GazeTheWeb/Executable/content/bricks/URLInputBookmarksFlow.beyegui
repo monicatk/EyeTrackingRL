@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<flow space="100%" direction="vertical" id="bookmarks_flow">
+	<stack id="bookmark_stack" direction="vertical">
+		<textblock style="default_noback" alignment="center" verticalalignment="center" fontsize="tall" key="url_input_bookmarks:title"/>
+	</stack>
+</flow>

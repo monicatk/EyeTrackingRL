@@ -1,0 +1,222 @@
+<!Doctype html>
+<html xmins="http://www.w3.org/1999/xhtml>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+<title>bceyepraktikum</title>
+<link rel="stylesheet" href="css/style.css"/>
+<script type = "text/javascript">
+function active(){
+var searchBar = document.getElementById('searchBar');
+if(searchBar.value == 'Search...'){
+searchBar.value = ''
+searchBar.placeholder = 'Search...'
+}
+}
+function inactive(){
+var searchBar = document.getElementById('searchBar');
+if(searchBar.value == ''){
+searchBar.value = 'Search...'
+searchBar.placeholder = ''
+}
+}
+function virtuelle_tastatur(key, caps, del,a,b){
+if(caps==1){
+var val = key;
+document.getElementById("searchBar").value+=val;
+}else if(caps==2){
+var val = key.toUpperCase();
+document.getElementById("searchBar").value+=val;
+
+
+}else if(del==3){
+var deger = document.getElementById("searchBar").value;
+var sil = deger.slice(0,(deger.length-1));
+document.getElementById("searchBar").value = sil
+}else if(a==1){
+document.getElementById("taste").style.display="none";
+document.getElementById("taste_big").style.display="block";
+}else if(a==2){
+document.getElementById("taste").style.display="block";
+document.getElementById("taste_big").style.display="none";
+}else if(b==1){
+document.getElementById("taste").style.display="block";
+document.getElementById("taste_big").style.display="none";
+document.getElementById("open").style.display="none";
+document.getElementById("close").style.display="block";
+
+}else{
+document.getElementById("taste").style.display="none";
+document.getElementById("taste_big").style.display="none";
+document.getElementById("open").style.display="block";
+document.getElementById("close").style.display="none";
+
+}
+}
+
+</script>
+<div id=top">
+<h1>Brain and Eye Interfaces</h1>
+<img src="C:\Users\Admin01\Desktop\bceyepraktikum\logo\bceyepraktikum.png" alt="Logo" 
+style="width:150px;height:150px;">
+</div>
+</head> 
+
+<body>
+
+<div id="rahmen" class="">
+<form action="search.php" methode="post">
+<input type="text" id="searchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onMouseDown="active();" onBlur="inactive();"/> 
+<input type="submit" id="searchBtn" value="Go!" />
+</form>
+<div id="open" class="" onclick="virtuelle_tastatur('','','','','1');">show
+<img src="C:\User\Admin01\Desktop\website\tastatur.jpg" alt="tastatur" style="width:30px; height:15px;">
+</div>
+<div id="close" class="" onclick="virtuelle_tastatur('','','','','2');">close
+<img src="C:\User\Admin01\Desktop\website\tastatur.jpg" alt="tastatur" style="width:30px; height:15px;">
+</div>
+<div id ="anzeige" class="">
+</div>
+<div id="taste" class="">
+<ul>
+<li><input value="1" type="button" id="button" onclick="virtuelle_tastatur('1','1','','','');"></li>
+<li><input value="2" type="button" id="button" onclick="virtuelle_tastatur('2','1','','','');"></li>
+<li><input value="3" type="button" id="button" onclick="virtuelle_tastatur('3','1','','','');"></li>
+<li><input value="4" type="button" id="button" onclick="virtuelle_tastatur('4','1','','','');"></li>
+<li><input value="5" type="button" id="button" onclick="virtuelle_tastatur('5','1','','','');"></li>
+<li><input value="6" type="button" id="button" onclick="virtuelle_tastatur('6','1','','','');"></li>
+<li><input value="7" type="button" id="button" onclick="virtuelle_tastatur('7','1','','','');"></li>
+<li><input value="8" type="button" id="button" onclick="virtuelle_tastatur('8','1','','','');"></li>
+<li><input value="9" type="button" id="button" onclick="virtuelle_tastatur('9','1','','','');"></li>
+<li><input value="0" type="button" id="button" onclick="virtuelle_tastatur('0','1','','','');"></li>
+<li><input value="< backspace" style="width:250px;" type="button" id="button" onclick="virtuelle_tastatur('','','3','','');"></li>
+<li><input value="q" type="button" id="button" onclick="virtuelle_tastatur('q','1','','','');"></li>
+<li><input value="w" type="button" id="button" onclick="virtuelle_tastatur('w','1','','','');"></li>
+<li><input value="e" type="button" id="button" onclick="virtuelle_tastatur('e','1','','','');"></li>
+<li><input value="r" type="button" id="button" onclick="virtuelle_tastatur('r','1','','','');"></li>
+<li><input value="t" type="button" id="button" onclick="virtuelle_tastatur('t','1','','','');"></li>
+<li><input value="y" type="button" id="button" onclick="virtuelle_tastatur('y','1','','','');"></li>
+<li><input value="u" type="button" id="button" onclick="virtuelle_tastatur('u','1','','','');"></li>
+<li><input value="i" type="button" id="button" onclick="virtuelle_tastatur('i','1','','','');"></li>
+<li><input value="o" type="button" id="button" onclick="virtuelle_tastatur('o','1','','','');"></li>
+<li><input value="p" type="button" id="button" onclick="virtuelle_tastatur('p','1','','','');"></li>
+<li><input value="ü" type="button" id="button" onclick="virtuelle_tastatur('ü','1','','','');"></li>
+<li><input value="enter"  style="width:211px;" type="button" id="button" onclick="virtuelle_tastatur('\n','1','','','');"></li>
+<li><input value="caps lock" style="width:171px;" type="button" id="button" onclick="virtuelle_tastatur('','','','1','');"></li>
+<li><input value="a" type="button" id="button" onclick="virtuelle_tastatur('a','1','','','');"></li>
+<li><input value="s" type="button" id="button" onclick="virtuelle_tastatur('s','1','','','');"></li>
+<li><input value="d" type="button" id="button" onclick="virtuelle_tastatur('d','1','','','');"></li>
+<li><input value="f" type="button" id="button" onclick="virtuelle_tastatur('f','1','','','');"></li>
+<li><input value="g" type="button" id="button" onclick="virtuelle_tastatur('g','1','','','');"></li>
+<li><input value="h" type="button" id="button" onclick="virtuelle_tastatur('h','1','','','');"></li>
+<li><input value="j" type="button" id="button" onclick="virtuelle_tastatur('j','1','','','');"></li>
+<li><input value="k" type="button" id="button" onclick="virtuelle_tastatur('k','1','','','');"></li>
+<li><input value="l" type="button" id="button" onclick="virtuelle_tastatur('l','1','','','');"></li>
+<li><input value="ö" type="button" id="button" onclick="virtuelle_tastatur('ö','1','','','');"></li>
+<li><input value="ä" type="button" id="button" onclick="virtuelle_tastatur('ä','1','','','');"></li>
+<li><input value="#" type="button" id="button" onclick="virtuelle_tastatur('#','1','','','');"></li>
+<li><input value="z" type="button" id="button" onclick="virtuelle_tastatur('z','1','','','');"></li>
+<li><input value="x" type="button" id="button" onclick="virtuelle_tastatur('x','1','','','');"></li>
+<li><input value="c" type="button" id="button" onclick="virtuelle_tastatur('c','1','','','');"></li>
+<li><input value="v" type="button" id="button" onclick="virtuelle_tastatur('v','1','','','');"></li>
+<li><input value="b" type="button" id="button" onclick="virtuelle_tastatur('b','1','','','');"></li>
+<li><input value="n" type="button" id="button" onclick="virtuelle_tastatur('n','1','','','');"></li>
+<li><input value="m" type="button" id="button" onclick="virtuelle_tastatur('m','1','','','');"></li>
+<li><input value="space" style="width:171px;" type="button" id="button" onclick="virtuelle_tastatur(' ','1','','','');"></li>
+<li><input value=":" type="button" id="button" onclick="virtuelle_tastatur(':','1','','','');"></li>
+<li><input value="," type="button" id="button" onclick="virtuelle_tastatur(',','1','','','');"></li>
+<li><input value="." type="button" id="button" onclick="virtuelle_tastatur('.','1','','','');"></li>
+<li><input value="-" type="button" id="button" onclick="virtuelle_tastatur('-','1','','','');"></li>
+<li><input value="@" type="button" id="button" onclick="virtuelle_tastatur('@','1','','','');"></li>
+
+
+</ul>
+
+
+</div>
+
+<div id="taste_big" class="">
+<ul>
+<li><input value="1" type="button" id="button" onclick="virtuelle_tastatur('1','2','','','');"></li>
+<li><input value="2" type="button" id="button" onclick="virtuelle_tastatur('2','2','','','');"></li>
+<li><input value="3" type="button" id="button" onclick="virtuelle_tastatur('3','2','','','');"></li>
+<li><input value="4" type="button" id="button" onclick="virtuelle_tastatur('4','2','','','');"></li>
+<li><input value="5" type="button" id="button" onclick="virtuelle_tastatur('5','2','','','');"></li>
+<li><input value="6" type="button" id="button" onclick="virtuelle_tastatur('6','2','','','');"></li>
+<li><input value="7" type="button" id="button" onclick="virtuelle_tastatur('7','2','','','');"></li>
+<li><input value="8" type="button" id="button" onclick="virtuelle_tastatur('8','2','','','');"></li>
+<li><input value="9" type="button" id="button" onclick="virtuelle_tastatur('9','2','','','');"></li>
+<li><input value="0" type="button" id="button" onclick="virtuelle_tastatur('0','2','','','');"></li>
+<li><input value="< BACKSPACE" style="width:250px;" type="button" id="button" onclick="virtuelle_tastatur('','','3','','');"></li>
+<li><input value="Q" type="button" id="button" onclick="virtuelle_tastatur('q','2','','','');"></li>
+<li><input value="W" type="button" id="button" onclick="virtuelle_tastatur('w','2','','','');"></li>
+<li><input value="E" type="button" id="button" onclick="virtuelle_tastatur('e','2','','','');"></li>
+<li><input value="R" type="button" id="button" onclick="virtuelle_tastatur('r','2','','','');"></li>
+<li><input value="T" type="button" id="button" onclick="virtuelle_tastatur('t','2','','','');"></li>
+<li><input value="Y" type="button" id="button" onclick="virtuelle_tastatur('y','2','','','');"></li>
+<li><input value="U" type="button" id="button" onclick="virtuelle_tastatur('u','2','','','');"></li>
+<li><input value="I" type="button" id="button" onclick="virtuelle_tastatur('i','2','','','');"></li>
+<li><input value="O" type="button" id="button" onclick="virtuelle_tastatur('o','2','','','');"></li>
+<li><input value="P" type="button" id="button" onclick="virtuelle_tastatur('p','2','','','');"></li>
+<li><input value="Ü" type="button" id="button" onclick="virtuelle_tastatur('ü','2','','','');"></li>
+<li><input value="ENTER"  style="width:211px;" type="button" id="button" onclick="virtuelle_tastatur('\n','1','','','');"></li>
+<li><input value="CAPS LOCK" style="width:171px;" type="button" id="button" onclick="virtuelle_tastatur('','','','2','');"></li>
+<li><input value="A" type="button" id="button" onclick="virtuelle_tastatur('a','2','','','');"></li>
+<li><input value="S" type="button" id="button" onclick="virtuelle_tastatur('s','2','','','');"></li>
+<li><input value="D" type="button" id="button" onclick="virtuelle_tastatur('d','2','','','');"></li>
+<li><input value="F" type="button" id="button" onclick="virtuelle_tastatur('f','2','','','');"></li>
+<li><input value="G" type="button" id="button" onclick="virtuelle_tastatur('g','2','','','');"></li>
+<li><input value="H" type="button" id="button" onclick="virtuelle_tastatur('h','2','','','');"></li>
+<li><input value="J" type="button" id="button" onclick="virtuelle_tastatur('j','2','','','');"></li>
+<li><input value="K" type="button" id="button" onclick="virtuelle_tastatur('k','2','','','');"></li>
+<li><input value="L" type="button" id="button" onclick="virtuelle_tastatur('l','2','','','');"></li>
+<li><input value="Ö" type="button" id="button" onclick="virtuelle_tastatur('ö','2','','','');"></li>
+<li><input value="Ä" type="button" id="button" onclick="virtuelle_tastatur('ä','2','','','');"></li>
+<li><input value="#" type="button" id="button" onclick="virtuelle_tastatur('#','2','','','');"></li>
+<li><input value="Z" type="button" id="button" onclick="virtuelle_tastatur('z','2','','','');"></li>
+<li><input value="X" type="button" id="button" onclick="virtuelle_tastatur('x','2','','','');"></li>
+<li><input value="C" type="button" id="button" onclick="virtuelle_tastatur('c','2','','','');"></li>
+<li><input value="V" type="button" id="button" onclick="virtuelle_tastatur('v','2','','','');"></li>
+<li><input value="B" type="button" id="button" onclick="virtuelle_tastatur('b','2','','','');"></li>
+<li><input value="N" type="button" id="button" onclick="virtuelle_tastatur('n','2','','','');"></li>
+<li><input value="M" type="button" id="button" onclick="virtuelle_tastatur('m','2','','','');"></li>
+<li><input value="SPACE" style="width:171px;" type="button" id="button" onclick="virtuelle_tastatur(' ','1','','','');"></li>
+<li><input value=":" type="button" id="button" onclick="virtuelle_tastatur(':','2','','','');"></li>
+<li><input value="," type="button" id="button" onclick="virtuelle_tastatur(',','2','','','');"></li>
+<li><input value="." type="button" id="button" onclick="virtuelle_tastatur('.','2','','','');"></li>
+<li><input value="-" type="button" id="button" onclick="virtuelle_tastatur('-','2','','','');"></li>
+<li><input value="@" type="button" id="button" onclick="virtuelle_tastatur('@','2','','','');"></li>
+
+
+</ul>
+
+</div>
+
+<div id="" class="" style="clear:both;"></div>
+
+
+</div>
+
+<div id="video" class="">
+<iframe width="720" height="405" src="https://www.youtube.com/embed/L3wKzyIN1yk=1" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

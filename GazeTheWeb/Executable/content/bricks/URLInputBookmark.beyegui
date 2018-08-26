@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<grid style="default" id="grid" border="15%" showbackground="true">
+	<row size="100%">
+		<column size="5%">
+			<blank/>
+		</column>
+		<column size="80%">
+			<textblock border="10%" id="url" alignment="left" verticalalignment="center"/>
+		</column>
+		<column size="15%">
+			<boxbutton icon="icons/Select.png" desckey="url_input_bookmarks:select" id="select"/>
+		</column>
+	</row>
+</grid>

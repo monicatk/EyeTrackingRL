@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<sensor icon="icons/ScrollUp.png" desckey="tab:scroll_up" id="scroll_up_sensor" style="invisible_but_icon" dimming="true"/>

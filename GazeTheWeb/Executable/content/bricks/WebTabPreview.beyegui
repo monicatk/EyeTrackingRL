@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<grid id="grid" innerborder="10%" border="10%" showbackground="true">
+    <row size="80%">
+        <column size="100%">
+            <boxbutton desckey="tab_overview:open_tab" id="button"/>
+        </column>
+    </row>
+    <row size="20%">
+        <column size="100%">
+            <textblock alignment="center" verticalalignment="center" fontsize="small" content="Title" id="textblock"/>
+        </column>
+    </row>
+</grid>

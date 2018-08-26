@@ -1,0 +1,44 @@
+frontend team:
+	presented design of website
+	"caroussel" for the video search results
+youtube api:
+	- presented youtube player
+	- buttons for "forward" and "backward" the video, change volume, speed, quality, mute ...
+	- (hedeshy.com/youtube/player)
+	- we need our own "fullscreen button, as we do not want to go into "youtubes" fullscreen mode (we need our own fullscreen mode, to have our own buttons in fullscreen). ramin will try to implement this.
+	- queue, channels...
+	- not sure how to hide the buttons frmo youtube. but he will (try to) find a way to do it!
+django team:
+	- presented results of tutorial
+	- basic application, where you can add albums 
+	- data is stored on databases (sql lite)
+	- static pictures
+	- html, css stysheets
+	- special python syntax inside the html
+		- important for frontend team
+	- useraccounts 
+
+youtube requires ip of the website
+	- suggestion: host on WEST-website, and use a proxy?
+	- for youtube, we need to create a project online
+	- it is connected to google account. 
+	- we have to create a google accout for the project
+databases:
+	- online + free, on ghrko. can be used for project as global database
+	- non-relational databases? ???
+lsl:
+	- old sdk works
+	- in new sdk, emotion-detection was moved from public to premium
+	- premium costs like 1000 euros
+goals until next meeting (Jan 10th 2017, 6pm)
+	- frontend team + youtube api
+		- finish the 2 pages
+		- fullscreen
+	lab streaming layer / arsenii
+		- finish lsl
+		- interfaces, recording of data
+		- storing the emotional states as well
+		- live (not processed) data record
+	django
+		- connection to mysql database (with the tables we need to 
+		- connection to frontend team

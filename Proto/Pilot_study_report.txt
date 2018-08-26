@@ -1,0 +1,39 @@
+Pilot study report
+15.05.17
+
+Test timeline
+0:00-1:10	opening videos
+1:10-3:32	video 1 starts “Going in Style”
+3:32-6:00	filling in questionnaire 2 for video 1 
+6:00-8:52	video 2 starts “Suicide squad”
+9:33-12:10	filling in questionnaire 2 for video 2 and questionnaire1, discussing
+12:10-14:58	video 3 starts “Love is all you need?”
+14:58-15:24	filling in questionnaire 2 for video 3
+15:24-15:36	full-screen problem
+15:36-18:05	video 4 starts “Wolves”
+18:05-18:55	filling in questionnaire 2 for video 4
+18:55-21:21	video 5 starts “Lights out”
+21:21-22:50	filling in questionnaire 2 for video 5
+22:50-25:20	video 6 starts “Ouija”
+25:20-26:00	filling in questionnaire 2 for video 6
+26:00-27:45	filling in questionnaire 3, discussing
+
+Set up of the software/hardware equipment for the test and calibration of the devices – 05:00 minutes.
+
+Estimated total time – 28 (±2) minutes.
+
+Issues:
+1. Questions about eyetracker in questionnaire 3 are useless if we don’t use them to control player.
+2. Additional sound system needed.
+3. How to open videos:
+   - multiple tabs
+   - create playlist 
+4. Questionnaire: 
+   - printed 
+   - in another tab
+5. "Go to main page" button doesn't work
+6. All buttons in the right part don't work
+7. Full screen button sometimes showed "half-full screen" or turned back to windowed mode
+8. Logout works only on main page
+9. No sign up functionality – may be ignored. Users will be created directly in the database.
+10. BCI malfunctioning.

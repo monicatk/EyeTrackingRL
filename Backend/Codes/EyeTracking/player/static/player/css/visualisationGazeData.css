@@ -1,0 +1,9 @@
+#stage {position: relative; }
+canvas { position: absolute; }
+#gazeCanvas { z-index: 2 }
+#gazeCanvas2 { z-index: 3 }
+#mgazeCanvas3 { z-index: 4 }
+#gazeCanvas4 { z-index: 5 }
+#gazeCanvas5 { z-index: 6 }
+#gazeCanvas6 { z-index: 7 }
+#video {z-index: 0}

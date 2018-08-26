@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+	<grid showbackground="true" style="panel">
+		<row size="100%">
+			<column size="10%">
+				<stack style="dark_panel" showbackground="true">
+					<circlebutton icon="icons/Cross.png" desckey="url_input:close" id="close" border="5%"/>
+				</stack>
+			</column>
+			<column size="90%">
+				<grid>
+					<row size="10%">
+						<column size="100%">
+							<blank/>
+						</column>
+					</row>
+					<row size="20%">
+						<column size="100">
+							<grid showbackground="true" style="default">
+								<row size="100">
+									<column size="12%">
+										<circlebutton id="bookmarks" desckey="url_input:bookmarks" icon="icons/Bookmarks.png" border="10%"/>
+									</column>
+									<column size="12%">
+										<circlebutton id="delete" desckey="url_input:delete" icon="icons/DeleteCharacter.png" border="10%"/>
+									</column>
+									<column size="64%">
+										<textblock id="text_block" alignment="center" verticalalignment="center" fontsize="tall"/>
+									</column>
+									<column size="12%">
+										<circlebutton id="complete" desckey="url_input:complete" icon="icons/Select.png" border="10%"/>
+									</column>
+								</row>
+							</grid>
+						</column>
+					</row>
+					<row size="70%">>
+						<column size="100%">
+							<keyboard id="keyboard"/>
+						</column>
+					</row>
+				</grid>
+			</column>
+		</row>
+	</grid>
+</layout>

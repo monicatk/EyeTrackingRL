@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="fixations_ext.json"></script>	
+<link rel="stylesheet" href="style.css">
+	<div id="stage">
+		<canvas id="myCanvas" width= "500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+		<!--//include video:-->
+		<iframe id="iframe" width="420" height="315" src="https://www.youtube.com/embed/dW1BIid8Osg?autoplay=1"></iframe>
+	</div>
+<script>
+//TODO : save canvas image and compare with other gaze Data ?	
+//save context to draw on this canvas
+var canvas = document.getElementById('myCanvas'),
+context = canvas.getContext('2d');
+//fit window size 
+var dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+var c = document.getElementById("myCanvas");
+c.width = dimension[0];
+c.height = dimension[1];
+var g = document.getElementById("iframe");
+g.width = dimension[0];
+g.height = dimension[1];
+//amount of points in the same time period
+var countPoints = 0;
+//array of coordinates : [position, duration, start, endtime]
+var coord = new Array();
+//array of all durations
+var dur = new Array();
+//medium duration time
+var middleDur; 	
+//round to secound place 
+function round2(x){
+	return Math.round(x / 0.01) * 0.01;
+}
+//create coordinate object
+function coordinate(x, y, duration, start) {
+	this.x = x;
+	this.y = y;
+	this.duration = duration;
+	this.start = start;
+}
+//get Coordinates and Duration from Data
+function getCoordinatesFromData(){
+	for (var i = 0; i < fix.length; i++) {
+		coord.push(new coordinate(fix[i].x, fix[i].y,round2(fix[i].duration), fix[i].start * 1000));
+	}
+}	
+//get all the durations in one Array
+function fillDurations(){
+	for (var i = 0; i < fix.length; i++) {
+		var cur = round2(fix[i].duration);
+		dur.push(cur);
+	}
+}
+// count middle duration
+function middleDuration(){
+	var sum = 0;
+	for (var i = 0; i < dur.length; i++) {
+		sum = sum + dur[i];
+	}
+	return sum/dur.length;
+}
+//paint Circles at fixatuon points
+function paintCircles(i){
+    if (i < coord.length) {
+		setCirclePosition(coord[i].x,coord[i].y,coord[i].duration, coord[i].start);			
+		setTimeout(function() {paintCircles(i+1);}, coord[i+1].start- coord[i].start);
+		countPoints = countPoints + 1;
+	}
+}
+//get radius of Circle
+function getCircleSize(duration){
+	if(duration >= middleDur){
+		return true;
+	} return false;
+}
+//draw Circle at x, y position in correct Size 
+function setCirclePosition(x,y,duration){
+	if (countPoints > 3 ){
+		context.clearRect(0,0,dimension[0],dimension[1]);
+		countPoints = 0;
+	}
+	x= x/ 1920 * dimension[0];
+	y= y/ 1200 * dimension[1];
+	var r = 40;
+	context.beginPath();
+	if(getCircleSize(duration)){
+		context.arc(x,y,20,0,2*Math.PI);
+		context.fillStyle = '#B40404';
+		context.globalAlpha = 0.5;
+		context.fill();
+		context.globalAlpha = 1.0;
+	}else{
+		context.arc(x,y,15,0,2*Math.PI);
+		context.fillStyle = '#F5DA81';
+		context.globalAlpha = 0.5;
+		context.fill();
+		context.globalAlpha = 1.0;
+	}
+};
+//fill dur array with durations
+fillDurations();
+//count middle duration
+middleDur = middleDuration();
+//store all datas in array coord
+getCoordinatesFromData();
+//call drawing method with a timeout 
+setTimeout(function() { paintCircles(0);}, 1000);
+</script> 
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+    <grid style="tab_debug">
+    	<row size="100%">
+    		<column size="9.375%">
+    			<blank/> <!-- reserved for Web -->
+    		</column>
+    		<column size="90.625%">
+    			<grid>
+    				<row size="100%">
+	    				<column size="90%">
+	    					<blank id="web_view"/> <!-- reserved for WebView rendering -->
+    					</column>
+    					<column size="10%">
+	    					<grid>
+	    						<row size="10%">
+										<column size="100%">
+											<textblock alignment="center" verticalalignment="center" content="DEBUG"/>
+										</column>
+									</row>
+									<row size="80%">
+										<column size="100%">
+										</column>
+									</row>
+									<row size="10%">
+										<column size="100%">
+											<textblock fontsize="small" alignment="center" verticalalignment="center" id="web_view_coordinate"/>
+										</column>
+									</row>
+								</grid>
+    					</column>
+    				</row>
+    			</grid>
+    		</column>
+    	</row>
+    </grid>
+</layout>

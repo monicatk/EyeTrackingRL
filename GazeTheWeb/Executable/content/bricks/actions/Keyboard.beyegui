@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<grid showbackground="true" consumeinput="true" style="tab_overlay">
+	<row size="5%">
+		<column size="100%"/>
+	</row>
+	<row size="25%">
+		<column size="100%">
+			<stack>
+				<circlebutton border="10%" id="delete_character" icon="icons/DeleteCharacter.png" desckey="action_keyboard:delete"/>
+				<textblock style="tab_overlay_noback" id="text_block" alignment="center" verticalalignment="center" fontsize="medium" relativescale="250%"/>
+				<grid relativescale="125%">
+					<row size="100%">
+						<column size="55%">
+							<circlebutton border="10%" id="complete" icon="icons/Ok.png" desckey="action_keyboard:complete"/>
+						</column>
+						<column size="45%">
+							<circlebutton border="10%" id="submit" icon="icons/Forward.png" desckey="action_keyboard:submit"/>
+						</column>
+					</row>
+				</grid>			
+			</stack>
+		</column>
+	</row>
+	<row size="10%">
+		<column size="100%">
+			<wordsuggest style="tab_overlay_panel" id="word_suggest"/>
+		</column>
+	</row>
+	<row size="47%">
+		<column size="100%">
+			<keyboard style="tab_overlay_noback" id="keyboard"/>
+		</column>
+	</row>
+	<row size="10%">
+		<column size="5%"/>
+		<column size="15%">
+			<boxbutton switch="true" icon="icons/Shift.png" id="shift" desckey="action_keyboard:shift"/>
+		</column>
+		<column size="5%"/>
+		<column size="50%">
+			<boxbutton id="space" icon="icons/Empty.png" desckey="action_keyboard:space"/>
+		</column>
+		<column size="25%"/>
+	</row>
+	<row size="3%">
+		<column size="100%"/>
+	</row>
+</grid>
+

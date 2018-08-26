@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}EBCI Index{% endblock %}</title>
+    {% load staticfiles %}
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{% static 'player/css/bootstrap.css' %}" >
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="{% static 'player/css/font-awesome.min.css' %}" >
+	<!-- Open Sans Font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- Main Styling -->
+    <link rel="stylesheet" href="{% static 'player/css/index.css' %}" >
+	<link rel="stylesheet" href="{% static 'player/css/nav.css' %}" >
+	<link rel="stylesheet" type="text/css" href="{% static 'player/css/eye_cursor.css' %}"/>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src={% static  'player/js/eye_cursor.js' %}></script>
+
+</head>
+
+<header>
+<div id="header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-inverse">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                   <ul class="nav navbar-nav navbar-left">
+				   		<li class="asTable" style="margin-top:1em;"><a href="http://127.0.0.1:8000/player/" id="index"> <span id="logo" class="hoverClickable"><img src="{% static 'player/images/logo.png' %}"></span></a></li>
+                    	<li class="asTable"><a href="#" onclick="history.go(-1);" id="goBack"><span class="hoverClickable glyphicon glyphicon-arrow-left fa-5x"></span></a></li>
+                    </ul>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <ul class="nav navbar-nav navbar-right"  >
+                       <li>
+		                   	<form role="search" method="get" action="{% url 'player:search' %}">
+		                        <div class="input-group input-group-unstyled" id="search">
+		                            <input type="text" class="form-control" name="q" value="{{ request.GET.q }}" placeholder="Search a new video...">
+		                            <span class="input-group-addon">
+		                                <button id="search-btn" type="submit" style="background: transparent; border: 0px; outline: 0; padding: 0">
+		                                    <span class="hoverClickable glyphicon glyphicon-search fa-5x"></span>
+		                                </button>
+		                            </span>
+		                        </div>
+		                    </form>
+                   		</li>
+                        <!-- li class="asTable"><button id="add_favorite" href="#" class="header_btn"><span class="hoverClickable glyphicon glyphicon-plus fa-5x"></span></button></li-->
+                        <li class="dropdown" ><button id="profile_dropdown_btn" href="#" class="dropdown-toggle header_btn" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="hoverClickable glyphicon glyphicon-user fa-5x"></span></button>
+                           <ul class="dropdown-menu" style="text-align:center">
+                       	     <li><button style="background-color:rgb(34,34,34);border:none" href="#settingsmodal" data-toggle="modal"  id="menu_entry1"><span class="hoverClickable glyphicon glyphicon-cog fa-3x"></span>Settings</button></li>
+                             <li role="separator" class="divider"></li>
+                             <li><button style="background-color:rgb(34,34,34);border:none" href="#infoModal" data-toggle="modal" id="menu_entry2"><span class="hoverClickable glyphicon glyphicon-info-sign fa-3x"></span>Information</button></li>
+                             <li role="separator" class="divider"></li>
+                        	 <li><button style="background-color:rgb(34,34,34);border:none" href="#helpModal" data-toggle="modal" id="menu_entry3"><span class="hoverClickable glyphicon glyphicon-question-sign fa-3x"></span>Help</button></li>
+                             <li role="separator" class="divider"></li>
+                             <li><button style="background-color:rgb(34,34,34);border:none" href="{% url 'logout' %}" id="menu_entry4"><span class="hoverClickable glyphicon glyphicon-log-out fa-3x"></span>Logout</button></li>
+                           </ul>
+                         </li>
+                     </ul>
+                </div>	 
+            </nav>
+        </div><!-- /.container-fluid -->
+    </div>
+</header>
+<body>
+
+
+
+<div id="content">
+
+	<div class="slide-show">
+	    <h1> Top Rated YouTube videos </h1>
+		<div class="carousel slide" data-ride="keyboard" data-type="multi" data-wrap="false" data-interval="false"  id="carousel1">
+		  <div class="carousel-inner">
+              {% for video in all_videos.top_rated %}
+                  {% if video.video_id == all_videos.top_rated.0.video_id %}
+                     <div class="item active">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="top-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube  img-responsive hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                  {% else %}
+                      <div class="item">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="top-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                   {% endif %}                      
+              {% endfor %}
+		  </div>
+		  <a id="left" class="left carousel-control" href="#carousel1" data-slide="prev"><span class="hoverClickable glyphicon glyphicon-chevron-left" style="left: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></span></a>
+		  <a id="right" class="right carousel-control" href="#carousel1" data-slide="next"><span class="hoverClickable glyphicon glyphicon-chevron-right" style="right: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></span></a>
+		</div>
+	</div>
+
+	<div class="slide-show">
+	    <h1> Last watched </h1>
+		<div class="carousel slide" data-ride="keyboard" data-type="multi" data-wrap="false" data-interval="false" id="carousel2">
+		  <div class="carousel-inner">
+              {% for video in all_videos.last_watched %}
+                  {% if video.video_id == all_videos.last_watched.0.video_id %}
+                      <div class="item active">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="last-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube  img-responsive hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                  {% else %}
+                      <div class="item">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="last-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+
+		  </div>
+		  <a id="left2" class="left carousel-control" href="#carousel2" data-slide="prev"><i class="hoverClickable glyphicon glyphicon-chevron-left" style="left: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></i></a>
+		  <a id="right2" class="right carousel-control" href="#carousel2" data-slide="next"><i class="hoverClickable glyphicon glyphicon-chevron-right" style="right: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></i></a>
+		</div>
+	</div>
+
+	<div class="slide-show">
+	    <h1> Recommended </h1>
+		<div class="carousel slide" data-ride="keyboard" data-type="multi" data-wrap="false" data-interval="false" id="carousel3">
+		  <div class="carousel-inner">
+              {% for video in all_videos.top_rated %}
+                  {% if video.video_id == all_videos.top_rated.0.video_id %}
+                      <div class="item active">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="recommended-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube  img-responsive hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                  {% else %}
+                      <div class="item">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="recomended-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+		  </div>
+		  <a id="left3"  class="left carousel-control" href="#carousel3" data-slide="prev"><i class="hoverClickable glyphicon glyphicon-chevron-left" style="left: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></i></a>
+		  <a id="right3" class="right carousel-control" href="#carousel3" data-slide="next"><i class="hoverClickable glyphicon glyphicon-chevron-right" style="right: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></i></a>
+		</div>
+	</div>
+
+	<div class="slide-show">
+	    <h1> Test videos </h1>
+		<div class="carousel slide" data-ride="keyboard" data-type="multi" data-wrap="false" data-interval="false" id="carousel4">
+		  <div class="carousel-inner">
+              {% for video in all_videos.top_rated %}
+                  {% if video.video_id == all_videos.top_rated.0.video_id %}
+                      <div class="item active">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="test-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube  img-responsive hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                  {% else %}
+                      <div class="item">
+                          <div class="col-md-3 col-sm-6">
+                              <a id="test-video-item-{{ video.video_id }}" href="{% url 'player:detail' video.video_id %}">
+                                  <div class="youtube hoverClickable" id={{ video.video_id }}></div>
+                                  <p> {{ video.title }} </p>
+                              </a>
+                          </div>
+                      </div>
+                  {% endif %}
+              {% endfor %}
+		  </div>
+		  <a id="left4"  class="left carousel-control" href="#carousel4" data-slide="prev"><i class="hoverClickable glyphicon glyphicon-chevron-left" style="left: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></i></a>
+		  <a id="right4" class="right carousel-control" href="#carousel4" data-slide="next"><i class="hoverClickable glyphicon glyphicon-chevron-right" style="right: 10px; top: 10px; padding-top: 60%; width: 100%; height: 100%;"></i></a>
+		</div>
+	</div>
+
+    <script src={% static  'player/js/index.js' %}></script>
+
+</div>
+
+	<div id="settingsmodal" class="modal fade ">
+			<div class="modal-dialog">
+					<div class="modal-content ">
+							<div class="modal-header">
+									<h1 class="modal-title">Settings</h1>
+							</div>
+							<div class="modal-body">
+									<p> Change Mouse/EyeTracking:
+									<button type="button" class="btn btn-default">Mouse</button>
+									</p>
+									<br>
+									
+									<p> Hide/Show mousecursour:
+									<button type="button" class="btn btn-default">Hide</button>
+									</p>
+									<br>
+									
+									<p> Change quality of video:
+									<button type="button" class="btn btn-default">1080p</button>
+									</p>                              
+							</div>
+							<div class="modal-footer"><button id="setting_close_btn" type="button" class="btn btn-default" data-dismiss="modal"><span class="hoverClickable">Close</span></button></div>
+					</div>
+			</div>
+	</div>
+	
+	<div id="infoModal" class="modal fade">
+			<div class="modal-dialog">
+					<div class="modal-content " style="background-color:rgb(16,16,16); color:white;text-align:center;">
+							<div class="modal-header">
+									<h1 class="modal-title">Information - EyeGUI</h1>
+							</div>
+							<div class="modal-body" style="width:500px;height:250px;margin-left:auto;margin-right:auto;vertical-align:middle">
+									<div>
+											<a href="#"><span><img style="width:150px;height:auto" src="{% static 'player/images/logo.png' %}"/></span></a>
+									</div>
+									<div style="float:right;padding:15px;vertical-align:middle">
+											<p style="font-size:14px;color:white;text-align:left">Developed by Projektpraktikum/Forschungspraktium WS 2016/2017</p>
+											<p style="font-size:14px;color:white;text-align:left">Supervised by Dr. Chandan Kumar</p>
+									</div>
+							</div>
+							<div class="modal-footer"><button id="info_close_btn" type="button" class="btn btn-default" data-dismiss="modal"><span class="hoverClickable">Close</span></button></div>
+					</div>
+			</div>
+	</div>
+
+	 <div id="helpModal" class="modal fade">
+			<div class="modal-dialog ">
+					<div class="modal-content " style="background-color:rgb(16,16,16); color:white;text-align:center">
+							<div class="modal-header">
+									<h1 class="modal-title">Help - EyeGUI</h1>
+							</div>
+							<div class="modal-body" style="width:500px;height:250px;margin-left:auto;margin-right:auto;vertical-align:middle;text-align:left">
+									<ul>
+											<li>Text - Placeholder</li>
+											<li>Text - Placeholder</li>
+											<li>Text - Placeholder</li>
+											<li>Text - Placeholder</li>
+									</ul>
+							</div>
+							<div class="modal-footer"><button id="help_close_btn" type="button" class="btn btn-default" data-dismiss="modal"><span class="hoverClickable">Close</span></button></div>
+					</div>
+			</div>
+	 </div>
+
+</body>
+
+</html>
+
+

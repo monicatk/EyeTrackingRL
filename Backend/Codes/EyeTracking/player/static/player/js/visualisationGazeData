@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="raphael_GotG2.json"></script>	
+<script src="anne_GotG2.json"></script>
+<script src="alex_GotG2.json"></script>	
+<script src="benny_GotG2.json"></script>
+<script src="joe_GotG2.json"></script>	
+<script src="christopher_GotG2.json"></script>
+<link rel="stylesheet" href="style_02.css">
+	<div id="stage">
+		<canvas id="myCanvas" width= "500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+		<canvas id="myCanvas2" width= "500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+		<canvas id="myCanvas3" width= "500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+		<canvas id="myCanvas4" width= "500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>	
+		<canvas id="myCanvas5" width= "500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>
+		<canvas id="myCanvas6" width= "500" height="500" style="border:1px solid #d3d3d3;">
+			Your browser does not support the HTML5 canvas tag.</canvas>		
+		<!--//include video:-->
+		<iframe id="iframe" width="420" height="315" src="https://www.youtube.com/embed/dW1BIid8Osg?autoplay=1"></iframe>
+	</div>
+<script>
+var canvas = document.getElementById('myCanvas'),
+context = canvas.getContext('2d');
+var canvas2 = document.getElementById('myCanvas2'),
+context2 = canvas2.getContext('2d');
+var canvas3 = document.getElementById('myCanvas3'),
+context3 = canvas3.getContext('2d');
+var canvas4 = document.getElementById('myCanvas4'),
+context4 = canvas4.getContext('2d');
+var canvas5 = document.getElementById('myCanvas5'),
+context5 = canvas5.getContext('2d');
+var canvas6 = document.getElementById('myCanvas6'),
+context6 = canvas6.getContext('2d');
+//fit window size 
+var dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+var c = document.getElementById("myCanvas");
+c.width = dimension[0];
+c.height = dimension[1];
+var g = document.getElementById("iframe");
+g.width = dimension[0];
+g.height = dimension[1];
+var c2 = document.getElementById("myCanvas2");
+c2.width = dimension[0];
+c2.height = dimension[1];
+var c3 = document.getElementById("myCanvas3");
+c3.width = dimension[0];
+c3.height = dimension[1];
+var c4 = document.getElementById("myCanvas4");
+c4.width = dimension[0];
+c4.height = dimension[1];
+var c5 = document.getElementById("myCanvas5");
+c5.width = dimension[0];
+c5.height = dimension[1];
+var c6 = document.getElementById("myCanvas6");
+c6.width = dimension[0];
+c6.height = dimension[1];
+//amount of points in the same time period
+var countPoints = 0;
+//array of coordinates : [position, duration, start, endtime]
+var coord = new Array();
+//array of all durations
+var dur = new Array();
+//medium duration time
+var middleDur; 	
+//round to secound place 
+function round2(x){
+	return Math.round(x / 0.01) * 0.01;
+}
+//create coordinate object
+function coordinate(x, y, duration, start) {
+	this.x = x;
+	this.y = y;
+	this.duration = duration;
+	this.start = start;
+}
+//get Coordinates and Duration from Data
+function getCoordinatesFromData(data){
+	var tmp = new Array();
+	for (var i = 0; i < data.length; i++) {
+		tmp.push(new coordinate(data[i].x, data[i].y,round2(data[i].duration), data[i].start * 1000));
+	}return tmp;
+}
+//paint Circles at fixatuon points
+function paintCircles2(coordArray, i , color, context){
+	var col = color;
+    if (i < coordArray.length-1) {
+		setCirclePositionOneColour(coordArray[i].x,coordArray[i].y,coordArray[i].duration *1000, color, context);		
+		setTimeout(function() {paintCircles2(coordArray, i+1, col, context);}, coordArray[i+1].start- coordArray[i].start);
+	}
+}
+//clear canvas
+function clearCanvas(canvas){
+	canvas.clearRect(0,0,dimension[0],dimension[1]);
+}
+//draw Circle at x, y position in correct Size 
+function setCirclePositionOneColour(x,y,duration, color, con){
+	x= x/ 1920 * dimension[0];
+	y= y/ 1200 * dimension[1];
+	var r = 40;
+	con.beginPath();
+	con.arc(x,y,50,0,2*Math.PI);
+	con.fillStyle =  color;
+	con.globalAlpha = 0.5;
+	con.fill();
+	con.globalAlpha = 1.0;
+	setTimeout(function() {clearCanvas(con);}, duration);
+};
+// convert data from json to array with coordinates 
+var colorRaphi = "grey";
+var raphiArray = new Array();
+raphiArray = raphael_GotG2;
+raphiArray = getCoordinatesFromData(raphiArray);
+//Anne: red 
+var colorAnne = "#f4201d";
+var anneArray = new Array();
+anneArray = anne_GotG2;
+anneArray = getCoordinatesFromData(anneArray);
+// benny: dark blue
+var colorBenny = "#1526c1";
+var bennyArray = new Array();
+bennyArray = benny_GotG2;
+bennyArray = getCoordinatesFromData(bennyArray);
+//alex: türkis
+var colorAlex = "#42f4c5";
+var alexArray = new Array();
+alexArray = alex_GotG2;
+alexArray = getCoordinatesFromData(alexArray);
+// christopher : green 
+var colorChris = "#06591a";
+var chrisArray = new Array();
+chrisArray = christopher_GotG2;
+chrisArray = getCoordinatesFromData(chrisArray);
+//paint: 
+window.onload = function(){
+	setTimeout(function() { paintCircles2(raphiArray, 0, colorRaphi, context6); }, 1);
+	setTimeout(function() { paintCircles2(anneArray, 0, colorAnne, context);}, 1);
+	setTimeout(function() { paintCircles2(bennyArray, 0, colorBenny, context5);}, 1);
+	setTimeout(function() { paintCircles2(alexArray, 0, colorAlex, context2);}, 1);
+	setTimeout(function() { paintCircles2(chrisArray, 0, colorChris, context4);}, 1);
+}
+</script> 
+</body>
+</html>
+

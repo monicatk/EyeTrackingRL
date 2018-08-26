@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>EyeGUI</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery-ui.js"></script>
+		<script type="text/javascript" src="jquery_002.js"></script>
+		<script type="text/javascript" src="video.js"></script>
+
+	</head>
+	<body>
+	<h1 align="center"> EyeGUI </h1>
+	
+	<div class="container">
+	
+	
+	
+	<div class="container-video">
+	<video class="myvideoplayer">
+	<source src="https://www.youtube.com/watch?v=AmAaWCFlxEE" type="video/mp4">
+	</video>
+<script>
+				videos = document.querySelectorAll("video");
+				for (var i = 0, l = videos.length; i < l; i++) {
+					var video = videos[i];
+					var src = video.src || (function () {
+						var sources = video.querySelectorAll("source");
+						for (var j = 0, sl = sources.length; j < sl; j++) {
+							var source = sources[j];
+							var type = source.type;
+							var isMp4 = type.indexOf("mp4") != -1;
+							if (isMp4) return source.src;
+						}
+						return null;
+					})();
+					if (src) {
+						var isYoutube = src && src.match(/(?:youtu|youtube)(?:\.com|\.be)\/([\w\W]+)/i);
+						if (isYoutube) {
+							var id = isYoutube[1].match(/watch\?v=|[\w\W]+/gi);
+							id = (id.length > 1) ? id.splice(1) : id;
+							id = id.toString();
+							var mp4url = "http://www.youtubeinmp4.com/redirect.php?video=";
+							video.src = mp4url + id;
+						}
+					}
+				} 
+				</script>	
+	</div>
+	
+	<div class="container-video-control">
+				<div class="controls-center">	
+			<div class="container-video-audio">
+			<div class="video-seek" >
+				<div class="controls-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+					<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0px;"></a>
+				</div>
+			</div>
+			
+			
+			<span class="controls-timer">00:00</span>
+			<span class="controls-totalTime">- 00:00</span>
+			</div>
+			<br>
+			<span><button type="button" class="controls-play">Play</button></span>
+			<span><button type="button" class="controls-mute">Mute</button></span>
+			<span><button type="button" class="controls-gotoStart"> |&lt; </button></span>
+			<span><button type="button" class="controls-rewind"> &lt;&lt; </button></span>
+			<span><button type="button" class="controls-fastfoward"> &gt;&gt; </button></span>
+			
+			<!--div class="audio-seek">
+				<div class="controls-audio-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+					<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"></a>
+				</div>
+			</div-->
+			
+			
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	</div>
+
+	</body>
+</html>

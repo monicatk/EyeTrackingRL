@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+    <grid style="tab_panel">
+    	<row size="100%">
+    		<column size="9.375%">
+    			<blank/> <!-- reserved for Web -->
+    		</column>
+    		<column size="90.625%">
+    			<grid>
+    				<row size="100%">
+	    				<column size="90%">
+	    					<blank id="web_view"/> <!-- reserved for WebView rendering -->
+    					</column>
+    					<column size="10%">
+	    					<stack showbackground="true" separator="0.1%">
+                                <block style="default_noback" relativescale="50%"/>
+								<boxbutton icon="icons/ScrollToTop.png" desckey="tab:scroll_to_top" id="scroll_to_top"/>
+			    				<boxbutton icon="icons/Click.png" desckey="tab:click" id="click_mode"/>
+								<boxbutton icon="icons/AutoScrolling.png" desckey="tab:auto_scrolling" id="auto_scrolling" switch="true"/>
+								<boxbutton icon="icons/Zoom.png" desckey="tab:zoom" id="zoom" switch="true"/>
+								<block style="default_noback" relativescale="50%"/>
+    						</stack>
+    					</column>
+    				</row>
+    			</grid>
+    		</column>
+    	</row>
+    </grid>
+</layout>

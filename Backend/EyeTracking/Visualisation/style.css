@@ -1,0 +1,7 @@
+#stage {
+			position: relative;
+		}
+		canvas { position: absolute; }
+		#myCanvas { z-index: 3 }
+		#myCanvas2 { z-index: 2 }
+		#video {z-index: 0}

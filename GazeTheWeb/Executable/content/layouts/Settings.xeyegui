@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<layout stylesheet="stylesheets/Global.seyegui">
+	<grid showbackground="true" style="panel">
+		<row size="100%">
+			<column size="15%">
+				<stack style="dark_panel" showbackground="true">
+					<circlebutton icon="icons/Cross.png" desckey="settings:close" id="close" border="15%"/>
+				</stack>
+			</column>
+			<column size="15%"/>
+			<column size="55%">
+				<grid innerborder="10%">
+					<row size="25%">
+						<column size="100%">
+							<textblock style="default_noback" alignment="center" verticalalignment="top" fontsize="tall" key="settings:title"/>
+						</column>
+					</row>
+					<row size="15%">
+						<column size="100%">
+							<grid innerborder="10%" style="default">
+								<row size="100%">
+									<column size="10%">
+										<block/>
+									</column>
+									<column size="70%">
+										<textblock alignment="left" verticalalignment="center" fontsize="medium" key="settings:general"/>
+									</column>
+									<column size="20%">
+										<boxbutton icon="icons/Select.png" id="general"/>
+									</column>
+								</row>
+							</grid>
+						</column>
+					</row>
+					<row size="15%">
+						<column size="100%">
+							<grid innerborder="10%" style="default">
+								<row size="100%">
+									<column size="10%">
+										<block/>
+									</column>
+									<column size="70%">
+										<textblock alignment="left" verticalalignment="center" fontsize="medium" key="settings:privacy"/>
+									</column>
+									<column size="20%">
+										<boxbutton icon="icons/Select.png" id="privacy"/>
+									</column>
+								</row>
+							</grid>
+						</column>
+					</row>
+					<row size="15%">
+						<column size="100%">
+							<grid innerborder="10%" style="default">
+								<row size="100%">
+									<column size="10%">
+										<block/>
+									</column>
+									<column size="70%">
+										<textblock alignment="left" verticalalignment="center" fontsize="medium" key="settings:input"/>
+									</column>
+									<column size="20%">
+										<boxbutton icon="icons/Select.png" id="input"/>
+									</column>
+								</row>
+							</grid>
+						</column>
+					</row>
+					<row size="15%">
+						<column size="100%">
+							<grid innerborder="10%" style="default">
+								<row size="100%">
+									<column size="10%">
+										<block/>
+									</column>
+									<column size="70%">
+										<textblock alignment="left" verticalalignment="center" fontsize="medium" key="settings:info"/>
+									</column>
+									<column size="20%">
+										<boxbutton icon="icons/Select.png" id="info"/>
+									</column>
+								</row>
+							</grid>
+						</column>
+					</row>
+					<row size="15%">
+						<column size="100%">
+							<grid innerborder="10%" style="default">
+								<row size="100%">
+									<column size="10%">
+										<block/>
+									</column>
+									<column size="70%">
+										<textblock alignment="left" verticalalignment="center" fontsize="medium" key="settings:exit"/>
+									</column>
+									<column size="20%">
+										<boxbutton icon="icons/Select.png" id="exit"/>
+									</column>
+								</row>
+							</grid>
+						</column>
+					</row>
+				</grid>
+			</column>
+			<column size="15%"/>
+		</row>
+	</grid>
+</layout>

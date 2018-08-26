@@ -1,0 +1,18 @@
+protocol
+
+talk to chandan:
+	questionaire:
+		ask for exact age, not age-groups
+		description of emotional states should be right below questions
+	2./3.5.2017: pilot study (to see, if everything works)
+	4./5.5.2017: experiments
+		maybe some without BCI, because it is currently broken and needs to be repaired
+	declaration (=permission from participants), chandan will send us from last year
+	maybe 5-10 euros "salary" for each participant
+	documentation (=part of report) - arsenii is responsible for it
+	evaluation (=part of report) - denise is responsible for it
+	IMPORTANT: send videos to chandan as soon as possible
+
+
+our own deadline for report = 21.5.2017
+gmail-adress from e1!
